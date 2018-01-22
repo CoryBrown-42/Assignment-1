@@ -1,8 +1,15 @@
+/*During the course of the assignment I used the internet to
+find references to things I had forgot how to do, like
+https://en.wikipedia.org/wiki/Sort_(C%2B%2B)
+I tried to alter the examples and used mostly things we have done in class.
+Studied and bounced ideas off of Ryann Dyer.
+
+Cory Brown
+*/
+
 #include <iostream>
 #include <random>
 #include <time.h>
-
-
 #include <vector>
 #include <algorithm>
 
@@ -81,17 +88,17 @@ void FindTheFirstAndThird(int arr[], int size)
 /*
 int GetHigh(int arr[], int size)
 {
-	int z = 1;
-	int high = arr[0];
-	while (z < size)
-	{
-		if (arr[z] > high)
-		{
-			high = arr[z];
-		}
-		z += 1;
-	}
-	return high;
+int z = 1;
+int high = arr[0];
+while (z < size)
+{
+if (arr[z] > high)
+{
+high = arr[z];
+}
+z += 1;
+}
+return high;
 }
 */
 
@@ -102,13 +109,13 @@ int GetHigh(int arr[], int size)
 class SearchByIntFunctor
 {
 public:
-	int intToSearchFor;
-	SearchByIntFunctor(int i) : intToSearchFor(i) {}
-	bool operator()(int &i)
-	{
-		return i == intToSearchFor;
-	}
-	
+int intToSearchFor;
+SearchByIntFunctor(int i) : intToSearchFor(i) {}
+bool operator()(int &i)
+{
+return i == intToSearchFor;
+}
+
 };
 */
 
@@ -151,13 +158,13 @@ int main()
 	//Atempt 1
 	/*for (i = 1; i < size; i++)
 	{
-		if (largest < myArray[i])
-			largest = myArray[i];
+	if (largest < myArray[i])
+	largest = myArray[i];
 	}
 	auto it = find_if(myVector.begin(), myVector.end(), SearchByIntFunctor(largest));
 	if(it != myVector.end())
-	{ 
-		cout << "Found" << *it << endl;
+	{
+	cout << "Found" << *it << endl;
 	}
 	cout << endl;*/
 
@@ -187,7 +194,7 @@ int main()
 	cout << endl << endl << "This is the same Array sorted" << endl;
 
 	/********* 4. Third Largest of the sorted ***********/
-	
+
 	FindTheFirstAndThird(myArray, g);
 	cout << endl;
 
@@ -195,10 +202,10 @@ int main()
 
 	/********* 5. Which  ***********/
 	/*
-	
+
 	I don't think sorting it really matters in this case because when looking at the individual values
-	the third largest is always going to be the third largest no matter which order they are in. 
+	the third largest is always going to be the third largest no matter which order they are in.
 	I think the function that finds the third value could also be used to describe the highest value.
-	
+
 	*/
 }
