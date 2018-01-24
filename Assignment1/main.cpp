@@ -3,7 +3,6 @@ find references to things I had forgot how to do, like
 https://en.wikipedia.org/wiki/Sort_(C%2B%2B)
 I tried to alter the examples and used mostly things we have done in class.
 Studied and bounced ideas off of Ryann Dyer.
-
 Cory Brown
 */
 
@@ -76,11 +75,8 @@ void FindTheFirstAndThird(int arr[], int size)
 			thirdHigh = arr[i];
 		}
 	}
-	cout << endl;
-	cout << "The first largest value in the Array: " << firstHigh << endl;
-	cout << endl;
-	cout << "The third largest value in the Array: " << thirdHigh << endl;
-	cout << endl;
+	cout << endl << endl << "The first largest value in the Array: " << firstHigh << endl << endl << endl;
+	cout << endl << endl << "The third largest value in the Array: " << thirdHigh << endl << endl << endl;
 
 }
 
@@ -101,8 +97,6 @@ z += 1;
 return high;
 }
 */
-
-
 //started going through old course videos
 //Functor
 /*
@@ -119,12 +113,43 @@ return i == intToSearchFor;
 };
 */
 
+void Swap(int &num1, int &num2)
+{
+	int temp = num1;
+	num1 = num2;
+	num2 = temp;
+}
+
+void BubbleSort(vector<int> &vec)
+{
+	for (int i = 0; i < vec.size() - 1; ++i)
+	{
+		if (vec[i] > vec[i + 1])
+		{
+			Swap(vec[i], vec[i + 1]);
+		}
+	}
+
+}
+
+void SelectionSort(vector<int> &vec)
+{
+	int maxIndex = 0;
+	for (int i = 1; i < vec.size(); ++i)
+	{
+		if (vec[i] > vec[maxIndex])
+		{
+			maxIndex = i + 1;
+		}
+		Swap(vec[maxIndex], vec[vec.size() - 1]);
+	}
+}
 
 int main()
 {
 	/********* Vector ***********/
 
-	vector<int> myVector(1000);
+	vector<int> myVector(10);
 	myVector[0] = 1;
 	for (int i = 0; i < 1000; i++) //loop through values 0 - 1000
 	{
@@ -132,28 +157,27 @@ int main()
 	}
 	DisplayArray(myVector.data(), 1000);
 	cout << endl;
-	cout << "This is an example of a vector containing 1000 random numbers" << endl;
+	cout << endl << endl << "This is an example of a vector containing 1000 random numbers" << endl << endl << endl;
 	cout << endl;
 
 	/********** 1. Array ************/
 
-	srand(time(0));      //seed time to 0
-	int myArray[1000];  //how large is the array
-	myArray[0] = 0;    //set index to 1
-	for (int i = 0; i < 1000; i++) //loop through values 0 - 1000
+	srand(time(0));					//seed time to 0
+	int myArray[1000];				//how large is the array
+	myArray[0] = 0;					//set index to 1
+	for (int i = 0; i < 1000; i++)	//loop through values 0 - 1000
 	{
 		myArray[i] = rand() % 2018;
 	}
 	DisplayArray(myArray, 1000);
-	cout << endl;
-	cout << "This is an example of an array containing 1000 random numbers" << endl;
-	cout << endl;
+	
+	cout << endl << endl << "This is an example of an array containing 1000 random numbers" << endl << endl << endl;
 
 
 	/********* 2. Search the Array ***********/
 
 	int largest = myArray[1000];
-	SearchVector(myVector, 1000);
+	SearchVector(myVector, 10);
 
 	//Atempt 1
 	/*for (i = 1; i < size; i++)
@@ -188,7 +212,6 @@ int main()
 	sort(myArray, myArray + size);
 	for (size_t i = 0; i < size; ++i)
 	{
-		//display the sorted array
 		cout << myArray[i] << ", ";
 	}
 	cout << endl << endl << "This is the same Array sorted" << endl;
@@ -198,6 +221,13 @@ int main()
 	FindTheFirstAndThird(myArray, g);
 	cout << endl;
 
+
+	BubbleSort(myVector);
+	DisplayArray(myVector.data(), 10);
+
+	SelectionSort(myVector);
+	DisplayArray(myVector.data(), 10);
+	
 	return 0;
 
 	/********* 5. Which  ***********/
