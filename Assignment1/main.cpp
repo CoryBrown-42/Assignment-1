@@ -188,7 +188,7 @@ int main()
 	sort(myArray, myArray + size);
 	for (size_t i = 0; i < size; ++i)
 	{
-		//display the sorted array
+		
 		cout << myArray[i] << ", ";
 	}
 	cout << endl << endl << "This is the same Array sorted" << endl;

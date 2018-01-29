@@ -1,4 +1,1 @@
-﻿  main.cpp
-i:\c++\assignment1\assignment1\main.cpp(22): warning C4018: '<': signed/unsigned mismatch
-i:\c++\assignment1\assignment1\main.cpp(133): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Assignment1.vcxproj -> I:\C++\Assignment1\Debug\Assignment1.exe
+﻿  Assignment1.vcxproj -> C:\Users\yroc9\Documents\GitHub\Assignment-1\Debug\Assignment1.exe
